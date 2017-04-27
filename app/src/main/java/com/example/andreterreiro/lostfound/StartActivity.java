@@ -16,6 +16,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 public class StartActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -28,6 +31,10 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
+        Realm.init(this);
+        RealmConfiguration config  = new RealmConfiguration.Builder().build();
+        Realm.setDefaultConfiguration(config);
 
         user = (EditText) findViewById(R.id.txtMail);
         pass = (EditText) findViewById(R.id.txtPassword);

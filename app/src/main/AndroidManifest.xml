@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserHomeActivity"></activity>
+        <activity android:name=".UserHomeActivity" />
+        <activity android:name=".Models.user" />
+        <activity android:name=".models.user" />
+        <activity android:name=".models.objetoPerdido" />
+        <activity android:name=".models.objetoEncontrado"></activity>
     </application>
 
 </manifest>
