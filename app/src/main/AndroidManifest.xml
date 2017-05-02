@@ -22,7 +22,8 @@
         <activity android:name=".models.objetoPerdido" />
         <activity android:name=".models.objetoEncontrado" />
         <activity android:name=".Register" />
-        <activity android:name=".models.Email"></activity>
+        <activity android:name=".models.Email" />
+        <activity android:name=".models.User"></activity>
     </application>
 
 </manifest>

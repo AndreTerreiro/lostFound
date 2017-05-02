@@ -1,15 +1,9 @@
 package com.example.andreterreiro.lostfound.models;
 
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-import com.google.firebase.auth.EmailAuthProvider;
-
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
-public class user extends RealmObject{
+public class User extends RealmObject {
     private int id;
     private int nUtilizador;
     private String nome;
