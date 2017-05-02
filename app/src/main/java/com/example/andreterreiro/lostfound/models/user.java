@@ -1,7 +1,10 @@
 package com.example.andreterreiro.lostfound.models;
 
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.google.firebase.auth.EmailAuthProvider;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
@@ -10,6 +13,7 @@ public class user extends RealmObject{
     private int id;
     private int nUtilizador;
     private String nome;
+    private ContactsContract.CommonDataKinds.Email email;
     private String password;
     private String tipoConta;
     private RealmList<objetoPerdido> oPerdidos;
@@ -37,6 +41,14 @@ public class user extends RealmObject{
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public ContactsContract.CommonDataKinds.Email getEmail() {
+        return email;
+    }
+
+    public void setEmail(ContactsContract.CommonDataKinds.Email email) {
+        this.email = email;
     }
 
     public String getPassword() {
