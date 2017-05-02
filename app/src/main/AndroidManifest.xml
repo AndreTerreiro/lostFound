@@ -21,7 +21,8 @@
         <activity android:name=".models.user" />
         <activity android:name=".models.objetoPerdido" />
         <activity android:name=".models.objetoEncontrado" />
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Register" />
+        <activity android:name=".models.Email"></activity>
     </application>
 
 </manifest>

@@ -13,11 +13,11 @@ public class user extends RealmObject{
     private int id;
     private int nUtilizador;
     private String nome;
-    private ContactsContract.CommonDataKinds.Email email;
+    private Email email;
     private String password;
     private String tipoConta;
-    private RealmList<objetoPerdido> oPerdidos;
-    private RealmList<objetoEncontrado> oEncontrados;
+    private RealmList<objetoPerdido> objPerdidos;
+    private RealmList<objetoEncontrado> objEncontrados;
 
     public int getId() {
         return id;
@@ -43,11 +43,11 @@ public class user extends RealmObject{
         this.nome = nome;
     }
 
-    public ContactsContract.CommonDataKinds.Email getEmail() {
+    public Email getEmail() {
         return email;
     }
 
-    public void setEmail(ContactsContract.CommonDataKinds.Email email) {
+    public void setEmail(Email email) {
         this.email = email;
     }
 
@@ -67,19 +67,19 @@ public class user extends RealmObject{
         this.tipoConta = tipoConta;
     }
 
-    public RealmList<objetoPerdido> getoPerdidos() {
-        return oPerdidos;
+    public RealmList<objetoPerdido> getObjPerdidos() {
+        return objPerdidos;
     }
 
-    public void setoPerdidos(RealmList<objetoPerdido> oPerdidos) {
-        this.oPerdidos = oPerdidos;
+    public void setObjPerdidos(RealmList<objetoPerdido> objPerdidos) {
+        this.objPerdidos = objPerdidos;
     }
 
-    public RealmList<objetoEncontrado> getoEncontrados() {
-        return oEncontrados;
+    public RealmList<objetoEncontrado> getObjEncontrados() {
+        return objEncontrados;
     }
 
-    public void setoEncontrados(RealmList<objetoEncontrado> oEncontrados) {
-        this.oEncontrados = oEncontrados;
+    public void setObjEncontrados(RealmList<objetoEncontrado> objEncontrados) {
+        this.objEncontrados = objEncontrados;
     }
 }
