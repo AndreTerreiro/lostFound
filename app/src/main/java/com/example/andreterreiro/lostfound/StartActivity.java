@@ -35,6 +35,8 @@ public class StartActivity extends AppCompatActivity {
         RealmConfiguration config  = new RealmConfiguration.Builder().build();
         Realm.setDefaultConfiguration(config);
 
+
+
         user = (EditText) findViewById(R.id.txtMail);
         pass = (EditText) findViewById(R.id.txtPassword);
 

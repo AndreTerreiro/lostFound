@@ -1,13 +1,8 @@
 package com.example.andreterreiro.lostfound.models;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import java.util.Date;
 
-import io.realm.RealmObject;
-
-public class objetoEncontrado extends RealmObject{
+public class objetoEncontrado {
     private int id;
     private String nome;
     private Date data;

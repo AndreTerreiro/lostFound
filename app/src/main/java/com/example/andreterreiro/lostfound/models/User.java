@@ -1,17 +1,14 @@
 package com.example.andreterreiro.lostfound.models;
 
-import io.realm.RealmList;
-import io.realm.RealmObject;
-
-public class User extends RealmObject {
+public class User {
     private int id;
     private int nUtilizador;
     private String nome;
     private Email email;
     private String password;
     private String tipoConta;
-    private RealmList<objetoPerdido> objPerdidos;
-    private RealmList<objetoEncontrado> objEncontrados;
+    private objetoPerdido[]objPerdidos;
+    private objetoEncontrado[]objEncontrados;
 
     public int getId() {
         return id;
@@ -61,19 +58,19 @@ public class User extends RealmObject {
         this.tipoConta = tipoConta;
     }
 
-    public RealmList<objetoPerdido> getObjPerdidos() {
+    public objetoPerdido[] getObjPerdidos() {
         return objPerdidos;
     }
 
-    public void setObjPerdidos(RealmList<objetoPerdido> objPerdidos) {
+    public void setObjPerdidos(objetoPerdido[] objPerdidos) {
         this.objPerdidos = objPerdidos;
     }
 
-    public RealmList<objetoEncontrado> getObjEncontrados() {
+    public objetoEncontrado[] getObjEncontrados() {
         return objEncontrados;
     }
 
-    public void setObjEncontrados(RealmList<objetoEncontrado> objEncontrados) {
+    public void setObjEncontrados(objetoEncontrado[] objEncontrados) {
         this.objEncontrados = objEncontrados;
     }
 }
