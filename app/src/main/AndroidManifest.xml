@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.andreterreiro.lostfound">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,14 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserHomeActivity" />
-        <activity android:name=".Models.user" />
-        <activity android:name=".models.user" />
         <activity android:name=".models.objetoPerdido" />
         <activity android:name=".models.objetoEncontrado" />
         <activity android:name=".Register" />
         <activity android:name=".models.Email" />
         <activity android:name=".models.User" />
-        <activity android:name=".models.Categoria"></activity>
+        <activity android:name=".models.Categoria" />
+        <activity android:name=".managerDatabase"></activity>
     </application>
 
 </manifest>

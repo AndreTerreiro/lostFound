@@ -1,14 +1,11 @@
 package com.example.andreterreiro.lostfound.models;
 
 public class Email {
-    private String mail;
+    public String mail;
 
-    public String getMail() {
-        return mail;
+    public Email(){
     }
-
-    public void setMail(String mail) {
+    public Email(String mail){
         this.mail = mail;
     }
-
 }
