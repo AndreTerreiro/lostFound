@@ -122,12 +122,15 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         Intent i = new Intent(this, Register.class);
         startActivity(i);
 
-
     }
     @Override
     public void onClick(View v) {
         if(v == login){
             signIn();
         }
+        if(v == registo){
+            signUp();
+        }
+
     }
 }
