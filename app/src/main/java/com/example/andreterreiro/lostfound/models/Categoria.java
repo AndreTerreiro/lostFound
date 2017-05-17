@@ -1,12 +1,9 @@
 package com.example.andreterreiro.lostfound.models;
 
 public class Categoria{
-    public String nome;
+    public String[] cat = new String[]{"Informática","Roupa", "Acessórios"};
 
-    public Categoria(){
-    }
-
-    public Categoria(String nome){
-        this.nome = nome;
+    public String[] getCat() {
+        return cat;
     }
 }

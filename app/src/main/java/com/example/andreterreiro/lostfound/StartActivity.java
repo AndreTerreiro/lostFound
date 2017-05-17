@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class StartActivity extends AppCompatActivity implements View.OnClickListener{
@@ -28,6 +30,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     private Button login;
     private Button registo;
 
+    DatabaseReference db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         registo = (Button) findViewById(R.id.registo);
         user = (EditText) findViewById(R.id.txtMail);
         pass = (EditText) findViewById(R.id.txtPassword);
+
+        db = FirebaseDatabase.getInstance().getReference();
 
         login.setOnClickListener(this);
         registo.setOnClickListener(this);
@@ -110,6 +116,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
+
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
                             Toast.makeText(StartActivity.this, "ERRO LOGIN", Toast.LENGTH_SHORT).show();
                         }

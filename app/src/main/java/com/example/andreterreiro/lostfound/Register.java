@@ -10,10 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.andreterreiro.lostfound.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,6 +35,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     public EditText m = (EditText) findViewById(R.id.mail);
     private static final String TAG = "Firebase";
     private String passF;
+    DatabaseReference db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,9 +48,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         mail = ((EditText) findViewById(R.id.mail)).getText().toString().trim();
         nome = ((EditText) findViewById(R.id.nome)).getText().toString().trim();
 
+        db = FirebaseDatabase.getInstance().getReference();
+
         if (p1.equals(p2)){
             passF = p1;
         }
+
+        mAuth = FirebaseAuth.getInstance();
 
         reg.setOnClickListener(this);
     }
@@ -118,6 +126,16 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                             if (!task.isSuccessful()) {
                                 Log.w(TAG, "signInWithEmail:failed", task.getException());
                                 Toast.makeText(Register.this, "ERRO REGISTO", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                String id = db.push().getKey();
+                                String tc = "Normal";
+
+                                User user = new User(Integer.parseInt(nUser),nome, mail,passF,tc);
+
+                                db.child(id).setValue(user);
+
+
                             }
                         }
                     });
