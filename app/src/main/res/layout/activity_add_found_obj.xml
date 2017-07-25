@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.andreterreiro.lostfound.AddFoundObj">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="67dp"
+        android:text="Nome :"
+        app:layout_constraintLeft_toLeftOf="@+id/textView15"
+        app:layout_constraintRight_toRightOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/addFobj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:text="Adicionar Objeto Encontrado"
+        app:layout_constraintTop_toBottomOf="@+id/etKeywords"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="218dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/etNome"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/etNome" />
+
+    <EditText
+        android:id="@+id/etNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="49dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView12"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="53dp"
+        android:text="Categoria :"
+        app:layout_constraintRight_toLeftOf="@+id/spinner2"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="44dp"
+        android:text="Localização :"
+        app:layout_constraintRight_toLeftOf="@+id/etLocation"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="53dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="63dp"
+        android:text="Keywords :"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:layout_constraintLeft_creator="1" />
+
+    <EditText
+        android:id="@+id/etLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_marginTop="26dp"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/spinner2" />
+
+    <EditText
+        android:id="@+id/etKeywords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@+id/etLocation"
+        app:layout_constraintLeft_toRightOf="@+id/textView15"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição :"
+        app:layout_constraintRight_toLeftOf="@+id/etDesc"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etDesc"
+        tools:layout_constraintBaseline_creator="1" />
+
+    <EditText
+        android:id="@+id/etDesc"
+        android:layout_width="214dp"
+        android:layout_height="96dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toBottomOf="@+id/etKeywords"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="72dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textView15"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp" />
+</android.support.constraint.ConstraintLayout>

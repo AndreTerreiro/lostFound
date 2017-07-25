@@ -7,16 +7,18 @@ public class User {
     public String email;
     public String password;
     public String tipoConta;
+    public String number;
 
     public User(){
     }
 
-    public User (int nUtilizador, String nome, String mail, String password, String tipoConta){
+    public User (int nUtilizador, String nome, String mail, String password, String tipoConta, String number){
         this.nUtilizador = nUtilizador;
         this.nome = nome;
         this.email = mail;
         this.password = password;
         this.tipoConta = tipoConta;
+        this.number = number;
 
     }
 
@@ -60,4 +62,11 @@ public class User {
         this.tipoConta = tipoConta;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 }

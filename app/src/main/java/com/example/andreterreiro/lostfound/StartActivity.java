@@ -15,9 +15,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import static com.example.andreterreiro.lostfound.R.id.regist;
 
 
 public class StartActivity extends AppCompatActivity implements View.OnClickListener{
@@ -29,6 +30,10 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     private EditText pass;
     private Button login;
     private Button registo;
+    private Intent z ;
+    private Intent a ;
+
+    private String x;
 
     DatabaseReference db;
 
@@ -38,7 +43,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_start);
 
         login = (Button) findViewById(R.id.login);
-        registo = (Button) findViewById(R.id.registo);
+        registo = (Button) findViewById(regist);
         user = (EditText) findViewById(R.id.txtMail);
         pass = (EditText) findViewById(R.id.txtPassword);
 
@@ -52,17 +57,19 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
+
+                if (firebaseAuth.getCurrentUser() != null) {
                     // User is signed in
-                   Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    startActivity(new Intent(StartActivity.this, UserHomeActivity.class));
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
                 }
             }
         };
+
     }
+
 
     @Override
     public void onStart() {
@@ -100,7 +107,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         return valid;
     }
 
-    public void signIn() {
+    public void Login(){
         String username = user.getText().toString();
         String password = pass.getText().toString();
 
@@ -124,20 +131,20 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 });
     }
 
-    public void signUp() {
-
-        Intent i = new Intent(this, Register.class);
-        startActivity(i);
-
-    }
     @Override
     public void onClick(View v) {
-        if(v == login){
-            signIn();
-        }
-        if(v == registo){
-            signUp();
-        }
+        // define an intent for all cases
+        switch(v.getId()){
+            case R.id.login:
+                // Setting intent for first button
+                    Login();
+                    break;
 
+            case R.id.regist:
+                // Setting intent for second button
+                startActivity(new Intent(this,Register.class));
+                break;
+
+        }
     }
 }

@@ -1,21 +1,20 @@
 package com.example.andreterreiro.lostfound.models;
 
-import java.util.Date;
-
 public class objetoPerdido {
 
     public int numUser;
-    public Date data;
+    public String data;
     public String nome;
-    public Categoria categoria;
+    public String categoria;
     public String descricao;
     public String keywords;
     public String local;
+    public String img;
 
     public objetoPerdido(){
     }
 
-    public objetoPerdido(int numUser,Date data, String nome, Categoria categoria, String descricao, String keywords, String local){
+    public objetoPerdido(int numUser,String data, String nome, String categoria, String descricao, String keywords, String local, String img){
         this.numUser = numUser;
         this.data = data;
         this.nome = nome;
@@ -23,6 +22,7 @@ public class objetoPerdido {
         this.descricao = descricao;
         this.keywords = keywords;
         this.local = local;
+        this.img = img;
     }
 
     public int getNumUser() {
@@ -33,11 +33,11 @@ public class objetoPerdido {
         this.numUser = numUser;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -49,11 +49,11 @@ public class objetoPerdido {
         this.nome = nome;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
@@ -79,5 +79,13 @@ public class objetoPerdido {
 
     public void setLocal(String local) {
         this.local = local;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }
